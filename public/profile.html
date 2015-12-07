@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  
+    <!-- Angular Material CSS -->
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="app.css">
+    
+    <style type="text/css">
+      /**
+      * Hide when Angular is not yet loaded and initialized
+      */
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
+    
+    <!--background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.46));-->
+  
+  </head>
+  <body ng-app="balconyShareApp" ng-controller="ProfileController as vm" ng-cloak>
+    <md-toolbar>
+      <div layout="row" layout-margin layout-padding class="md-toolbar-tools">
+        <a flex="none" href="/"><h1 class="md-display-4">BALCONY SHARE</h1></a>
+          <md-input-container flex="grow" class="app-search-bar" md-no-float>
+            <input type="search" class="search-input" placeholder="Search">
+          </md-input-container>
+        <a flex="none" href="/profile"><md-icon md-svg-icon="svg-2" class="app-avatar-big"></md-icon></a>
+      </div>
+    </md-toolbar>
+    <md-content class="md-padding" layout="column" flex="50" flex-offset="25" layout-align="center start">
+      <md-card>
+        <md-card-content>
+          <div layout="column" layout-align="space-between stretch">
+            <div layout="row">One</div>
+          </div>
+        </md-card-content>
+      </md-card>
+      <md-button class="md-fab md-fab-bottom-right app-fab-bottom-right-fixed md-primary">
+        <md-icon md-font-set="material-icons" class="icon-favorite-active"> create </md-icon>
+      </md-button>
+    </md-content>
+    
+    <!-- Angular Material Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    
+    
+    <!-- Angular Material Javascript -->
+    <script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
+    
+    <!-- ANGULAR CUSTOM -->
+    <script src="app.js"></script>
+    <script src="home.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

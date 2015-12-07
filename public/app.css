@@ -1,0 +1,60 @@
+.app-avatar-big {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+.app-avatar-medium {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+.app-avatar-small {
+  /*position: relative;*/
+  width: 50px;
+  height: 50px;
+  /*border: 1px solid #ddd;*/
+  border-radius: 50%;
+  /*display: inline-block;*/
+  overflow: hidden;
+  margin: 0px;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+.app-vertical-align-middle {
+  position: relative;
+  vertical-align: bottom;
+}
+.app-search-bar {
+  background-color: rgba(255,255,255,.15);
+}
+.app-card-footer {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.icon-favorite-active{
+  color: red;
+}
+.app-fab-bottom-right-fixed {
+  position: fixed !important;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  
+    <!-- Angular Material CSS -->
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="app.css">
+    
+    <style type="text/css">
+      /**
+      * Hide when Angular is not yet loaded and initialized
+      */
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
+    
+    
+  
+  </head>
+  <body ng-app="starterApp" ng-controller="UserController as uc" ng-cloak>
+    <md-toolbar>
+      <div layout="row" layout-margin layout-padding class="md-toolbar-tools">
+        <a flex="none" href="/"><h1 class="md-display-4">BALCONY SHARE</h1></a>
+          <md-input-container flex="grow" class="app-search-bar" md-no-float>
+            <input type="search" class="search-input" placeholder="Search">
+          </md-input-container>
+        <a flex="none" href="/"><md-icon md-svg-icon="svg-2" class="app-avatar-big"></md-icon></a>
+      </div>
+    </md-toolbar>
+    <md-content flex="100">
+      <md-content class="md-padding" layout="row" flex="50" flex-offset="25" layout-wrap layout-align="center start">
+        <div flex="50" layout="column">
+          <md-card>
+            <md-card-header layout="row" layout-align="start center">
+              <md-icon md-svg-icon="svg-2" class="app-avatar-medium"></md-icon>
+              <h1 class="md-title">User</h1>
+            </md-card-header>
+            <a href="/"><img ng-src="https://unsplash.it/400/300?image=836" class="md-card-image" alt="Washed Out"></a>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">In-card mixed actions</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p>
+                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+              </p>
+            </md-card-content>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Favorite">
+                  <md-icon md-font-set="material-icons" class="icon-favorite-active"> favorite </md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Comment">
+                  <md-icon md-font-set="material-icons"> message </md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Share">
+                  <md-icon md-font-set="material-icons"> share </md-icon>
+                </md-button>
+              </md-card-actions>
+              <md-card-footer layout="row" layout-align="start center" class="app-card-footer">
+                <md-icon md-svg-icon="svg-2" class="app-avatar-small"></md-icon>
+                <span><b>User:</b></span>
+                <span>&nbsp;</span>
+                <span>Comment</span>
+              </md-card-footer>
+          </md-card>
+        </div>
+      </md-content>
+      <md-button class="md-fab md-fab-bottom-right app-fab-bottom-right-fixed md-primary">
+        <md-icon md-font-set="material-icons" class="icon-favorite-active"> create </md-icon>
+      </md-button>
+    </md-content>
+    
+    <!-- Angular Material Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    
+    
+    <!-- Angular Material Javascript -->
+    <script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
+    
+    <script type="text/javascript">
+    
+      (function(){
+        'use strict';
+      
+        // Prepare the 'users' module for subsequent registration of controllers and delegates
+        angular
+          .module('users', [])
+          .controller('UserController', 
+            function() {
+              var vm = this;
+            
+              vm.buttonText ='Go Back';
+            });
+            
+          })();
+    </script>
+    <script type="text/javascript">
+  
+            angular
+                .module('starterApp', ['ngMaterial', 'users'])
+                .config(function($mdThemingProvider, $mdIconProvider){
+  
+                  $mdIconProvider
+                      .defaultIconSet("./avatars.svg", 128);
+                      
+                  $mdThemingProvider.theme('default')
+                      .primaryPalette('red');
+                });
+  
+      </script>
+  </body>
+</html>
