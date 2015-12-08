@@ -3,19 +3,22 @@
 // modules =================================================
 var express= require('express');
 var app=express();
+var db = require('./server/db');
 
 // set our port
 var port = process.env.PORT || 3000; 
 
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/client')); 
 // app.set('view engine', 'ejs');
 
 // routes ==================================================
 // require('./app/routes')(app); // configure our routes
 
 app.get('/', function(req, res) {
-	res.sendFile(__dirname + '/public/index.html');
+	res.sendFile(__dirname + '/client/index.html');
 });
+
+db.syncDb();
 
 // app.get('/profile', function(req, res) {
 // 	res.sendFile(__dirname + '/public/profile.html');

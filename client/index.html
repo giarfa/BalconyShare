@@ -25,6 +25,8 @@
   
   </head>
   <body ng-app="balconyShareApp" ng-controller="HomeController as vm" ng-cloak>
+    
+    <!-- Toolbar -->
     <md-toolbar>
       <div layout="row" layout-margin layout-padding class="md-toolbar-tools">
         <a flex="none" href="/"><h1 class="md-display-4">BALCONY SHARE</h1></a>
@@ -34,6 +36,8 @@
         <a flex="none" href="/profile"><md-icon md-svg-icon="svg-2" class="app-avatar-big"></md-icon></a>
       </div>
     </md-toolbar>
+    
+    <!-- Page Content -->
     <md-content class="md-padding" layout="row" flex="50" flex-offset="25" layout-wrap layout-align="center start">
       <div flex="50" layout="column" ng-repeat="event in vm.events | filter:query">
         <md-card>
@@ -76,6 +80,8 @@
             </md-card-footer>
         </md-card>
       </div>
+      
+      <!-- New Event Button -->
       <md-button class="md-fab md-fab-bottom-right app-fab-bottom-right-fixed md-primary">
         <md-icon md-font-set="material-icons" class="icon-favorite-active"> create </md-icon>
       </md-button>
