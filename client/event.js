@@ -34,7 +34,7 @@
 		);
 		vm.events.push(
 		{
-			name: 'Last Year view of my balcony',
+			name: 'Last Year view from my balcony',
 			description: '',
 			date: '12 jul.',
 			image: 'http://s1.stliq.com/c/m/a/aa/22559852_lucca-summer-festival-2013-16-edizione-1.jpg',
