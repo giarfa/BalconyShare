@@ -37,7 +37,7 @@ exports.Comment = commentDataType;
 var eventDataType = sequelize.define('Event', {
   name: Sequelize.STRING,
   description: Sequelize.TEXT,
-  date: Sequelize.DATE,
+  date: Sequelize.DATEONLY,
   image: Sequelize.STRING,
   isFavorite: Sequelize.BOOLEAN
 }, {
@@ -58,10 +58,30 @@ eventDataType.hasMany(commentDataType, {as: 'Comments' });
 exports.Event = eventDataType;
 
 exports.syncDb = function() { 
-	sequelize.sync()
+	sequelize.sync({force: true})
 		.then(function() {
 			console.log('OK');
 		}).catch(function(error) {
 		  console.log(error);
 		}); 
+};
+
+exports.setUp = function() {
+	userDataType.findById(5).then(function(user){
+		eventDataType.create({	name: 'In-card mixed actions',
+  								description: 'The titles of Washed Out\'s breakthrough song and the first single from Paracosm.',
+  								date: new Date(2015,12,7),
+  								image: 'https://unsplash.it/400/300?image=836',
+  								isFavorite: true
+							})
+		.then(function(event) {
+			console.log('OK');
+			event.setPublisher=user;
+			event.save().then(function() {console.log('Updated');});
+		}).catch(function(error) {
+		  console.log(error);
+		});
+	}).catch(function(error) {
+		  console.log(error);
+		});
 };

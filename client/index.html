@@ -28,17 +28,17 @@
     
     <!-- Toolbar -->
     <md-toolbar>
-      <div layout="row" layout-margin layout-padding class="md-toolbar-tools">
+      <div layout="row" layout-margin layout-padding layout-align="space-between center" class="md-toolbar-tools">
         <a flex="none" href="/"><h1 class="md-display-4">BALCONY SHARE</h1></a>
-          <md-input-container flex="grow" class="app-search-bar" md-no-float>
-            <input type="search" class="search-input" ng-model="query" placeholder="Search">
-          </md-input-container>
+          <!--<md-input-container flex="grow" class="app-search-bar" md-no-float>
+            <input type="search" ng-model="query" placeholder="Search">
+          </md-input-container>-->
         <a flex="none" href="/profile"><md-icon md-svg-icon="svg-2" class="app-avatar-big"></md-icon></a>
       </div>
     </md-toolbar>
     
     <!-- Page Content -->
-    <md-content class="md-padding" layout="row" flex="50" flex-offset="25" layout-wrap layout-align="center start">
+    <md-content class="md-padding" layout="row" flex="70" flex-offset="15" layout-wrap>
       <div flex="50" layout="column" ng-repeat="event in vm.events | filter:query">
         <md-card>
           <md-card-header>
@@ -50,7 +50,7 @@
               <h3 class="md-subhead" style="color: rgba(0,0,0,.5);">{{ event.date }}</h3>
             </div>
           </md-card-header>
-          <a href="/"><img ng-src="{{ event.image }}" class="md-card-image"></a>
+          <a href="/event"><img ng-src="{{ event.image }}" class="md-card-image"></a>
           <md-card-title>
             <md-card-title-text>
               <span class="md-headline">{{ event.name }}</span>
@@ -61,7 +61,7 @@
           </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
               <md-button class="md-icon-button" aria-label="Favorite">
-                <md-icon md-font-set="material-icons" class="icon-favorite-active"> favorite </md-icon>
+                <md-icon md-font-set="material-icons" ng-class="(event.isFavorite) ? 'icon-favorite-active' : 'icon-favorite'"> favorite </md-icon>
               </md-button>
               <md-button class="md-icon-button" aria-label="Comment">
                 <md-icon md-font-set="material-icons"> message </md-icon>
@@ -82,9 +82,9 @@
       </div>
       
       <!-- New Event Button -->
-      <md-button class="md-fab md-fab-bottom-right app-fab-bottom-right-fixed md-primary">
+      <!--<md-button class="md-fab md-fab-bottom-right app-fab-bottom-right-fixed md-primary">
         <md-icon md-font-set="material-icons" class="icon-favorite-active"> create </md-icon>
-      </md-button>
+      </md-button>-->
     </md-content>
     
     <!-- Angular Material Dependencies -->
@@ -99,6 +99,6 @@
     <!-- ANGULAR CUSTOM -->
     <script src="app.js"></script>
     <script src="home.js"></script>
-    <script src="profile.js"></script>
+    <script src="event.js"></script>
   </body>
 </html>

@@ -17,12 +17,12 @@ app.use(express.static(__dirname + '/client'));
 app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/client/index.html');
 });
+app.get('/event', function(req, res) {
+	res.sendFile(__dirname + '/client/event.html');
+});
 
-db.syncDb();
-
-// app.get('/profile', function(req, res) {
-// 	res.sendFile(__dirname + '/public/profile.html');
-// });
+// db.syncDb();
+// db.setUp();
 
 // start app ===============================================
 // startup our app at http://localhost:3000
