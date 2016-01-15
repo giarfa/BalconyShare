@@ -5,113 +5,32 @@
 	angular
 	.module('event', [])
 	.controller('EventController', 
-	function() {
+	function($mdDialog) {
 		var vm = this;
 	
-		vm.events = [];
-		
-		vm.events.push(
-		{
-			name: 'In-card mixed actions',
-			description: 'The titles of Washed Out\'s breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene\'s musical language: feel it. It\'s a simple request, as well...',
-			date: '24 jul.',
-			image: 'http://www.rockshock.it/wp-content/uploads/2013/12/Lucca-Summer-Festival.jpg',
-			isFavorite: true,
-			publisher: {
-			name: 'Lia',
-			image: 'svg-1'
-			},
-			comments: [
-			{
-				user: {
-				name: 'User',
-				image: 'svg-2'
-				},
-				comment: 'Comment'
-			}
-			]
-		}
-		);
-		vm.events.push(
-		{
-			name: 'Last Year view from my balcony',
-			description: '',
-			date: '12 jul.',
-			image: 'http://s1.stliq.com/c/m/a/aa/22559852_lucca-summer-festival-2013-16-edizione-1.jpg',
-			isFavorite: true,
-			publisher: {
-			name: 'Gener',
-			image: 'svg-3'
-			},
-			comments: [
-			{
-				user: {
-				name: 'User',
-				image: 'svg-2'
-				},
-				comment: 'Comment'
-			},
-			{
-				user: {
-				name: 'User',
-				image: 'svg-2'
-				},
-				comment: 'Comment'
-			}
-			]
-		}
-		);
-		// vm.events.push(
-		// {
-		// 	name: 'In-card mixed actions',
-		// 	description: 'The titles of Washed Out\'s breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene\'s musical language: feel it. It\'s a simple request, as well...',
-		// 	date: '7 dec.',
-		// 	image: 'https://unsplash.it/400/300?image=836',
-		// 	isFavorite: true,
-		// 	publisher: {
-		// 	name: 'User',
-		// 	image: 'svg-2'
-		// 	},
-		// 	comments: [
-		// 	{
-		// 		user: {
-		// 		name: 'User',
-		// 		image: 'svg-2'
-		// 		},
-		// 		comment: 'Comment'
-		// 	},
-		// 	{
-		// 		user: {
-		// 		name: 'User',
-		// 		image: 'svg-2'
-		// 		},
-		// 		comment: 'Comment'
-		// 	}
-		// 	]
-		// }
-		// );
-		// vm.events.push(
-		// {
-		// 	name: 'In-card mixed actions',
-		// 	description: 'The titles of Washed Out\'s breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene\'s musical language: feel it. It\'s a simple request, as well...',
-		// 	date: '7 dec.',
-		// 	image: 'https://unsplash.it/400/300?image=836',
-		// 	isFavorite: true,
-		// 	publisher: {
-		// 	name: 'User',
-		// 	image: 'svg-2'
-		// 	},
-		// 	comments: [
-		// 	{
-		// 		user: {
-		// 		name: 'User',
-		// 		image: 'svg-2'
-		// 		},
-		// 		comment: 'Comment'
-		// 	}
-		// 	]
-		// }
-		// );
+		vm.balconies = db().balconies;
+        
+        vm.buyBalcony = function(ev) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.confirm()
+                .title('Would you like to buy this balcony?')
+                .textContent('Mustache esse vinyl, food truck celiac cold-pressed blue bottle minim non keytar austin nesciunt street art.')
+                .ariaLabel('Lucky day')
+                .ok('Please do it!')
+                .cancel('No, thanks');
+            $mdDialog.show(confirm).then(function() {
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .clickOutsideToClose(true)
+                        .title('This is an alert title')
+                        .textContent('You can specify some description text in here.')
+                        .ariaLabel('Alert Dialog Demo')
+                        .ok('Got it!')
+                );
+            }, function() {
+            });
+};
+  
 	});
 	
 	})();

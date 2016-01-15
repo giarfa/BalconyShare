@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/client'));
 app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/client/index.html');
 });
-app.get('/event', function(req, res) {
+app.get('/event/:id', function(req, res) {
 	res.sendFile(__dirname + '/client/event.html');
 });
 

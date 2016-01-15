@@ -55,6 +55,19 @@
 .icon-favorite-active{
   color: red;
 }
+.icon-balcony-sold{
+  color: red;
+}
+.icon-balcony-available{
+  color: green;
+}
 .app-fab-bottom-right-fixed {
   position: fixed !important;
+}
+md-input-container .md-input {
+    border-width: 0;
+}
+md-input-container .md-errors-spacer {
+    float: right;
+    min-height: 0;
 }

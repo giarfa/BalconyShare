@@ -3,8 +3,8 @@ angular
 	.config(function($mdThemingProvider, $mdIconProvider){
 	
 		$mdIconProvider
-			.defaultIconSet("./avatars.svg", 128);
+			.defaultIconSet("/avatars.svg", 128);
 			
 		$mdThemingProvider.theme('default')
-			.primaryPalette('grey');
+			.primaryPalette('red');
 	});
