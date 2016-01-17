@@ -10,6 +10,7 @@
     <!-- Angular Material CSS -->
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/app.css">
     
     <style type="text/css">
@@ -28,22 +29,25 @@
     
     <!-- Toolbar -->
     <md-toolbar>
-      <div layout="row" layout-margin layout-padding layout-align="space-between center" class="md-toolbar-tools">
-        <a flex="none" href="/"><h1 class="md-display-4">BALCONY SHARE</h1></a>
-          <md-input-container flex="grow" class="app-search-bar" md-no-float>
+      <div layout="row" layout-margin layout-align="space-between center" class="md-toolbar-tools">
+        <a flex="none" hide-xs href="/"><h1 class="md-display-4">BALCONY SHARE</h1></a>
+        <a flex="none" hide-gt-xs href="/"><img src="/imgs/logo.png" class="app-logo"></a>
+        <md-input-container flex="grow" class="app-search-bar" md-no-float>
             <input type="search" ng-model="query" placeholder="Search">
-          </md-input-container>
-        <a flex="none" href=""><md-icon md-svg-icon="svg-2" class="app-avatar-big"></md-icon></a>
+        </md-input-container>
+        <a flex="none" href=""><md-icon md-svg-icon="svg-2" class="app-avatar-medium"></md-icon></a>
+        
       </div>
     </md-toolbar>
     
     <!-- Page Content -->
-    <md-content class="md-padding" layout="row" flex="70" flex-offset="15" layout-wrap>
-      <div flex="50" layout="column" ng-repeat="event in vm.events | filter:query">
+    <md-content class="md-padding" layout="row" flex-gt-xs="70" flex-offset-gt-xs="15" layout-wrap>
+      <div flex-gt-xs="50" layout="column" ng-repeat="event in vm.events | filter:query">
         <md-card>
           <md-card-header>
             <div flex="50" layout="row" layout-align="start center"> 
-              <md-icon md-svg-icon="{{ event.publisher.image }}" class="app-avatar-medium"></md-icon>
+              <md-icon ng-hide="event.publisher.image === ''" md-svg-icon="{{ event.publisher.image }}" class="app-avatar-medium"></md-icon>
+              <img ng-hide="event.publisher.photo === ''" ng-src="{{ event.publisher.photo }}" class="app-avatar-medium">
               <h1 class="md-title">{{ event.publisher.name }}</h1>
             </div>
             <div flex="50" layout="row" layout-align="end center"> 
@@ -66,16 +70,53 @@
               <md-button class="md-icon-button" aria-label="Comment">
                 <md-icon md-font-set="material-icons"> message </md-icon>
               </md-button>
-              <md-button class="md-icon-button" aria-label="Share">
-                <md-icon md-font-set="material-icons"> share </md-icon>
-              </md-button>
+              <md-menu>
+                <md-button class="md-icon-button" aria-label="Share" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-font-set="material-icons"> share </md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="fa fa-lg fa-facebook-square" style="color: #3b5998;"></md-icon>
+                        facebook
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="fa fa-lg fa-twitter-square" style="color: #55acee;"></md-icon>
+                        twitter
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="fa fa-lg fa-instagram"  style="color: #125688;"></md-icon>
+                        instagram
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="fa fa-lg fa-pinterest-square"  style="color: #cb2027;"></md-icon>
+                        pinterest
+                    </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
             </md-card-actions>
             <md-card-footer layout="column" class="app-card-footer">
-              <div layout="row" layout-align="start center" ng-repeat="comment in event.comments">
+              <div layout="row" hide-xs layout-align="start center" ng-repeat="comment in event.comments" style="margin-bottom: 15px;">
                 <md-icon md-svg-icon="{{ comment.user.image }}" class="app-avatar-small"></md-icon>
                 <span><b>{{ comment.user.name }}:</b></span>
                 <span>&nbsp;</span>
                 <span>{{ comment.comment }}</span>
+              </div>
+              <div layout-xs="column" hide-gt-xs layout-align="start start" ng-repeat="comment in event.comments" style="margin-bottom: 15px;">
+                <div layout="row">
+                    <md-icon md-svg-icon="{{ comment.user.image }}" class="app-avatar-medium"></md-icon>
+                    <div layout="column">
+                        <span><b>{{ comment.user.name }}</b></span>
+                        <span>{{ comment.comment }}</span>
+                    </div>
+                </div>
               </div>
             </md-card-footer>
         </md-card>
@@ -101,5 +142,6 @@
     <script src="/db.js"></script>
     <script src="/home.js"></script>
     <script src="/event.js"></script>
+    <script src="/dialog.js"></script>
   </body>
 </html>

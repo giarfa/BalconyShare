@@ -20,6 +20,9 @@ app.get('/', function(req, res) {
 app.get('/event/:id', function(req, res) {
 	res.sendFile(__dirname + '/client/event.html');
 });
+app.get('/dialog', function(req, res) {
+	res.sendFile(__dirname + '/client/dialog.html');
+});
 
 // db.syncDb();
 // db.setUp();
