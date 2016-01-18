@@ -3,8 +3,60 @@ var db = function () {
     
     events.push(
     {
+        name: 'RadioItaliaLive Concert',
+        description: 'It\'s the most famous italian music concert organized by Radio Italia. It takes place in Milano during june.',
+        date: '28 may',
+        image: 'http://2.bp.blogspot.com/-RhRqCUQYEY0/VRlkeyLK9YI/AAAAAAAAMxo/vvJ2XYnKA9I/s1600/1giugno.png',
+        isFavorite: false,
+        publisher: {
+            name: 'Gastone',
+            image: 'svg-5',
+            photo: ''
+        },
+        comments: [
+            {
+                user: {
+                    name: 'Elisabetta',
+                    image: 'svg-6'
+                },
+                comment: 'I love it so much!'
+            }
+        ]
+    });
+    
+    events.push(
+    {
+        name: 'Woodstock 2.0',
+        description: 'This will be the best recreation of the original Woodstock Music & Art Fair',
+        date: '15 aug.',
+        image: 'http://www.loschermo.it/imagecache/articoli/foto1/woodstock_800_800.jpg',
+        isFavorite: false,
+        publisher: {
+            name: 'Balcony Share',
+            image: '',
+            photo: '/imgs/BalconyShare.png'
+        },
+        comments: [
+            {
+                user: {
+                    name: 'Young Janet',
+                    image: 'svg-6'
+                },
+                comment: 'I do NOT want to miss the 2.0 version ;)'
+            },
+            {
+                user: {
+                    name: 'Granny',
+                    image: 'svg-9'
+                },
+                comment: 'I was there in 1969 and it was spectacular'
+            }
+        ]
+    });
+    events.push(
+    {
         name: 'Lucca Summer Festival 2016',
-        description: 'Mustache esse vinyl, food truck celiac cold-pressed blue bottle minim non keytar austin nesciunt street art. Disrupt laboris farm-to-table, retro jean shorts umami dreamcatcher cray reprehenderit.',
+        description: 'Lucca Summer Festival is a very famous musical event held in Lucca in each July from 1998. Performers like Bob Dylan, Elton John and Stevie Wonder tooks part in this festival.',
         date: '7 jul.',
         image: '/imgs/lucca-summer-festival1.jpg',
         isFavorite: true,
@@ -19,43 +71,14 @@ var db = function () {
                     name: 'Lawrence',
                     image: 'svg-4'
                 },
-                comment: 'I do NOT want to miss the 2.0 version ;)'
+                comment: 'Last year Snoop Dogg performance was definitly COOL!!!'
             },
             {
                 user: {
                     name: 'Sandra',
                     image: 'svg-9'
                 },
-                comment: 'I do NOT want to miss the 2.0 version ;)'
-            }
-        ]
-    });
-    events.push(
-    {
-        name: 'Woodstock 2.0',
-        description: 'Crucifix voluptate pitchfork, brunch leggings meggings slow-carb wolf chia food truck irure green juice viral. Nisi butcher fugiat, lumbersexual shoreditch whatever tempor photo booth microdosing mollit freegan cred mumblecore cold-pressed leggings. Literally blue bottle pinterest, scenester franzen mumblecore lomo dreamcatcher dolore intelligentsia do.',
-        date: '15 aug.',
-        image: 'http://www.loschermo.it/imagecache/articoli/foto1/woodstock_800_800.jpg',
-        isFavorite: false,
-        publisher: {
-            name: 'Balcony Share',
-            image: '',
-            photo: '/imgs/BalconyShare.png'
-        },
-        comments: [
-            {
-                user: {
-                    name: 'Lawrence',
-                    image: 'svg-4'
-                },
-                comment: 'I do NOT want to miss the 2.0 version ;)'
-            },
-            {
-                user: {
-                    name: 'Lawrence',
-                    image: 'svg-4'
-                },
-                comment: 'I do NOT want to miss the 2.0 version ;)'
+                comment: 'Pino Daniele is the best in all the editions.'
             }
         ]
     });
