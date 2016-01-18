@@ -3,7 +3,6 @@
 // modules =================================================
 var express= require('express');
 var app=express();
-var db = require('./server/db');
 
 // set our port
 var port = process.env.PORT || 3000; 
